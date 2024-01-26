@@ -41,10 +41,13 @@ const Shop=()=>{
                 })
         })
     }
+    const searchProductHandler=(items)=>{
+        setProducts(items)
+    }
     return(
         <>
             <ProductForm add={addProduct}/>
-            <ProductSearch/>
+            <ProductSearch onLoadProducts={searchProductHandler}/>
             <ProductList products={products}/>
         </>
     )
