@@ -1,7 +1,7 @@
 const Input=(props)=>{
     return(
         <>
-            <input type={props.type} id={props.id} value={props.value} onChange={props.change}/>
+            <input type={props.type} ref={props.refs}  id={props.id} value={props.value} onChange={props.change}/>
         </>
     )
 }
