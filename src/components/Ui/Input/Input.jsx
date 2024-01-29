@@ -1,7 +1,7 @@
-const Input=(props)=>{
+const Input=({type,refs,id,value,change})=>{
     return(
         <>
-            <input type={props.type} ref={props.refs}  id={props.id} value={props.value} onChange={props.change}/>
+            <input type={type} ref={refs} id={id} value={value} onChange={change} />
         </>
     )
 }

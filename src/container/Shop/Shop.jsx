@@ -1,38 +1,45 @@
 import ProductForm from "../../components/ProductForm/ProductForm.jsx";
 import ProductSearch from "../../components/ProductSearch/ProductSearch.jsx";
 import ProductList from "../../components/ProductList/ProductList.jsx";
-import React,{useState,useCallback} from "react";
-const Shop=()=>{
-    const [products, setProducts]=useState([])
-    const addProduct=(item)=>{
-        fetch("https://practice-react-d0abc-default-rtdb.firebaseio.com/newProducts.json",{
-            method:'POST',
-            body:JSON.stringify(item),
-            headers:{'Content-Type':'application/json'}
-        }).then((response)=>{
-            response.json()
-                .then((responseDate)=>{
-                    setProducts((prevState)=>{
-                        return[
-                            ...prevState,
-                            {
-                                id:responseDate.name,
-                                ...item,
-                            },
-                        ]
-                    })
-                })
-        })
-    }
-    const searchProductHandler=useCallback((items)=>{
-        setProducts(items)
-    },[])
-    return(
-        <>
-            <ProductForm add={addProduct}/>
-            <ProductSearch onLoadProducts={searchProductHandler}/>
-            <ProductList products={products}/>
-        </>
-    )
-}
-export default Shop
+import React, { useCallback, useReducer } from "react";
+const productReducer = (state, action) => {
+  switch (action.type) {
+    case "SET":
+      return action.products;
+    case "ADD":
+      return [...state, action.product];
+    default:
+      throw new Error("Error");
+  }
+};
+const Shop = () => {
+  const [products, dispath] = useReducer(productReducer, []);
+  const addProduct = (item) => {
+    fetch(
+      "https://practice-react-d0abc-default-rtdb.firebaseio.com/newProducts.json",
+      {
+        method: "POST",
+        body: JSON.stringify(item),
+        headers: { "Content-Type": "application/json" },
+      }
+    ).then((response) => {
+      response.json().then((responseDate) => {
+        dispath({
+          type: "ADD",
+          product: { id: responseDate.name, ...item },
+        });
+      });
+    })
+  };
+  const searchProductHandler = useCallback((items) => {
+    dispath({ type: "SET", products: items });
+  }, []);
+  return (
+    <>
+      <ProductForm add={addProduct} />
+      <ProductSearch onLoadProducts={searchProductHandler} />
+      <ProductList products={products} />
+    </>
+  );
+};
+export default Shop;

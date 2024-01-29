@@ -6,7 +6,7 @@ const ProductSearch = (props) => {
   const [error, setError] = useState(false);
   const inputRef = useRef();
   useEffect(() => {
-    setTimeout(() => {
+    const timer=setTimeout(() => {
       if (productSearch === inputRef.current.value) {
         const query =
           productSearch.length === 0
@@ -35,6 +35,9 @@ const ProductSearch = (props) => {
           });
       }
     }, 500);
+    return ()=>{
+      clearTimeout(timer)
+    }
   }, [productSearch, onLoadProducts, inputRef]);
   return (
     <>
