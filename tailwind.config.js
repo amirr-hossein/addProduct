@@ -4,7 +4,22 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        regular:["iranSans-regular"],
+        black:["iranSans-black"],
+        bold:["iranSans-bold"],
+      },
+      borderRadius:{
+        login:"20px"
+      },
+      backgroundColor:{
+        login:"rgba(15, 16, 53, 0.70)"
+      },
+      padding:{
+        login:"5px 0px 15px 0px"
+      }
+    },
   },
   plugins: [],
 }

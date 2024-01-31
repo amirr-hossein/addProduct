@@ -35,6 +35,7 @@ const ProductForm = (props) => {
           change={(event) =>
             dispatch({ type: "name", checkingForm: event.target.value })
           }
+          className={"bg-slate-800"}
         />
         <br />
         <label htmlFor={"number"}>Number Of Book:</label>
