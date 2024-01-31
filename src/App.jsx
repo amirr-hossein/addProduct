@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import Shop from "./container/Shop/Shop";
 import Auth from "./components/auth/Authtication";
 import { AuthContext } from "./context/Auth";
-import useDarkMode from './hooks/Them'
+import useDarkMode from "./hooks/Them";
 const App = (props) => {
-  const [theme, toggleTheme] = useDarkMode()
+  const [theme, toggleTheme] = useDarkMode();
   const authContext = useContext(AuthContext);
   let content = <Auth />;
   if (authContext.isAuth) {
@@ -18,8 +18,8 @@ const App = (props) => {
             transition: ".2s all",
           }}
         >
-          <Shop/>
-          <button type="button" onClick={toggleTheme}>
+          <Shop />
+          <button type="button" className="" onClick={toggleTheme}>
             تغیر تم
           </button>
         </div>
@@ -28,5 +28,4 @@ const App = (props) => {
   }
   return content;
 };
-
 export default App;
