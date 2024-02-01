@@ -12,7 +12,7 @@ const productReducer = (state, action) => {
       throw new Error("Error");
   }
 };
-const Shop = () => {
+const Shop = (props) => {
   const [products, dispath] = useReducer(productReducer, []);
   const addProduct = (item) => {
     fetch(
@@ -36,7 +36,7 @@ const Shop = () => {
   }, []);
   return (
     <>
-      <ProductForm add={addProduct} />
+      <ProductForm add={addProduct} themeBtn={props.themeForm} />
       <ProductSearch onLoadProducts={searchProductHandler} />
       <ProductList products={products} />
     </>

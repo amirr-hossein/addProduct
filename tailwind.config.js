@@ -10,6 +10,9 @@ module.exports = {
         black:["iranSans-black"],
         bold:["iranSans-bold"],
       },
+      fontSize:{
+        titleAddProduct:"64px",
+      },
       borderRadius:{
         login:"20px"
       },
