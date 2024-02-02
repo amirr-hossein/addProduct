@@ -41,14 +41,16 @@ const ProductSearch = (props) => {
   }, [productSearch, onLoadProducts, inputRef]);
   return (
     <>
-      <form action="">
-        <label htmlFor={"search"}>Search:</label>
+      <form className="flex flex-col items-end" action="">
+        <label htmlFor={"search"}>جستجو</label>
         <Input
           refs={inputRef}
           id={"search"}
           value={productSearch}
           change={(e) => setProductSearch(e.target.value)}
           type={"search"}
+          className={"w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"}
+          dir={"rtl"}
         />
         {error ? <p>fetch failed</p> : null}
       </form>
