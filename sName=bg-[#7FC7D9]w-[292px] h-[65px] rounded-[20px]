@@ -1,0 +1,66 @@
+[33mcommit 50e9031d0d6d86036e3ef92be12088eaa68bdc41[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Fri Feb 2 16:06:59 2024 +0330
+
+    update=>style forms
+
+[33mcommit 9d8e3dfdde644a2f2d2f5f617351eaeebb02cdfe[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Thu Feb 1 18:57:19 2024 +0330
+
+    Update=>half style for addingProduct
+
+[33mcommit 6a78882c6407f00632d41e2a78011ba5d7787c62[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Wed Jan 31 21:16:34 2024 +0330
+
+    Update=>style login
+
+[33mcommit 28d762d11de7b7723b42723e34d291e37ebaeaed[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Wed Jan 31 18:22:35 2024 +0330
+
+    edit=>delete bootstrap and install tailwind
+
+[33mcommit 8235eaa1705741212ef788bbc00eca8dac0694df[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Tue Jan 30 19:27:17 2024 +0330
+
+    edit=>toggle theme & authntication
+
+[33mcommit 2607856c010873d536b2b8f15ca71fd7797efc77[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Mon Jan 29 14:23:03 2024 +0330
+
+    edit=>next add product value input null
+    update=>post content with useReduser for better prformance
+
+[33mcommit ec4cdaf7a61f99e485b998b7e00be558ec817457[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Sun Jan 28 16:15:07 2024 +0330
+
+    update=>the better prformance
+
+[33mcommit 65b7291472f2ebffecb62707487dbb93a45b940a[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Sat Jan 27 00:38:37 2024 +0330
+
+    edit=>working search
+
+[33mcommit b6034ab3c1630fe6bc8e6c308767e2168f4db85e[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Fri Jan 26 18:34:14 2024 +0330
+
+    get data as api and show in app
+
+[33mcommit f49d317578275ed711f7a20d2f19cd46871cfdb4[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Tue Jan 16 18:48:56 2024 +0330
+
+    add api and post data to firebase
+
+[33mcommit 9164883d1b0417be36edbbdb38831711c9f05bbd[m
+Author: amirrhossein.ir <amirrhossein.ir@gmail.com>
+Date:   Mon Jan 15 10:36:57 2024 +0330
+
+    create product

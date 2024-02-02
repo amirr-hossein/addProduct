@@ -1,9 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext,useReducer } from "react";
 import Shop from "../Shop/Shop";
 import Auth from "../../components/auth/Authtication";
 import { AuthContext } from "../../context/Auth";
 import useDarkMode from "../../hooks/Them";
+import ProductList from "../../components/ProductList/ProductList";
+const productReducer = (state, action) => {
+  switch (action.type) {
+    case "SET":
+      return action.products;
+    case "ADD":
+      return [...state, action.product];
+    default:
+      throw new Error("Error");
+  }
+};
 const Wrapper = (props) => {
+  const [products, dispath] = useReducer(productReducer, []);
   const [theme, toggleTheme] = useDarkMode();
   const authContext = useContext(AuthContext);
   let content = <Auth />;
@@ -11,9 +23,12 @@ const Wrapper = (props) => {
     content = (
       <>
         <div
-          className="app h-[100vh] flex justify-center items-center flex-col"
+          className="app flex justify-center items-center flex-col h-[78vh]"
         >
-          <Shop themeForm={props.theme} />
+          <Shop produc={products} dispath={dispath} themeForm={props.theme} />
+        </div>
+        <div className="absolute bottom-[24px] right-[36.3%]">
+        <ProductList products={products} />
         </div>
       </>
     );

@@ -30,8 +30,9 @@ const ProductSearch = (props) => {
             }
             onLoadProducts(loadedData);
           })
-          .catch(() => {
+          .catch((error) => {
             setError(true);
+            console.log(error)
           });
       }
     }, 500);
@@ -52,7 +53,9 @@ const ProductSearch = (props) => {
           className={"w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"}
           dir={"rtl"}
         />
-        {error ? <p>fetch failed</p> : null}
+        {error ? <div className="w-full text-center">
+          <p className="mt-[24px] text-[#365486] text-[30px] font-bold">واکنشی انجام نشد </p>
+        </div> : null}
       </form>
     </>
   );

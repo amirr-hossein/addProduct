@@ -12,7 +12,7 @@ const App = () => {
       <>
         <div className="relative">
           <div
-            className=""
+            className="relative h-[100vh]"
             style={{
               background: theme === "dark" ? "#0F1035" : "#DCF2F1",
               color: theme === "dark" ? "#DCF2F1" : "#365486",

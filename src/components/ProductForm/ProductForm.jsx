@@ -26,7 +26,7 @@ const ProductForm = (props) => {
   };
   return (
     <>
-      <h1 className="text-titleAddProduct font-black mb-[63px]">
+      <h1 className="text-[50px] font-black mb-[38px]">
         اضافه کردن محصولات
       </h1>
       <form className="flex flex-col items-center" action="">
@@ -58,7 +58,7 @@ const ProductForm = (props) => {
         </div>
         <Button
           className={
-            "w-[292px] h-[74px] opacity-[70%] rounded-[20px] text-[32px] font-bold mt-[43px] mb-[30px]"
+            "w-[292px] h-[74px] opacity-[70%] rounded-[20px] text-[32px] font-bold mt-[28px] mb-[20px]"
           }
           style={{
             backgroundColor: props.themeBtn === "dark" ? "#7FC7D9" : "#0F1035",
