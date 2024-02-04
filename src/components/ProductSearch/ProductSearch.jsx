@@ -35,7 +35,7 @@ const ProductSearch = (props) => {
             console.log(error);
           });
       }
-    }, 500);
+    }, 100);
     return () => {
       clearTimeout(timer);
     };
@@ -62,14 +62,14 @@ const ProductSearch = (props) => {
         >
           جستجو
         </span>
-        {error ? (
-          <div className="w-full text-center">
-            <p className="mt-[24px] text-[#365486] text-[30px] font-bold">
-              واکنشی انجام نشد{" "}
-            </p>
-          </div>
-        ) : null}
       </form>
+      {error ? (
+        <div className="w-full text-center">
+          <p className="mt-[24px] text-[#365486] text-[30px] font-bold">
+            واکنشی انجام نشد
+          </p>
+        </div>
+      ) : null}
     </>
   );
 };

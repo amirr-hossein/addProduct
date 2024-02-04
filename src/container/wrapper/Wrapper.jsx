@@ -1,4 +1,4 @@
-import React, { useContext,useReducer } from "react";
+import React, { useContext, useReducer } from "react";
 import Shop from "../Shop/Shop";
 import Auth from "../../components/auth/Authtication";
 import { AuthContext } from "../../context/Auth";
@@ -17,18 +17,34 @@ const productReducer = (state, action) => {
 const Wrapper = (props) => {
   const [products, dispath] = useReducer(productReducer, []);
   const [theme, toggleTheme] = useDarkMode();
+  const deleteProdct = (productId) => {
+    fetch(
+      `https://practice-react-d0abc-default-rtdb.firebaseio.com/newProducts/${productId}.json`,
+      {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      }
+    )
+      .then(() => {
+        const updatedProducts = products.filter(
+          (product) => product.id !== productId
+        );
+        dispath({ type: "SET", products: updatedProducts });
+      })
+      .catch((error) => {
+        console.error("Error deleting product", error);
+      });
+  };
   const authContext = useContext(AuthContext);
   let content = <Auth />;
   if (authContext.isAuth) {
     content = (
       <>
-        <div
-          className="app flex justify-center items-center flex-col h-[78vh]"
-        >
-          <Shop produc={products} dispath={dispath} themeForm={props.theme} />
+        <div className="app flex justify-center items-center flex-col h-[78vh]">
+          <Shop product={products} dispath={dispath} themeForm={props.theme} />
         </div>
         <div className="absolute bottom-[24px] right-[50%] productList">
-        <ProductList products={products} />
+          <ProductList products={products} delete={deleteProdct} />
         </div>
       </>
     );
