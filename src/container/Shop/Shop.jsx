@@ -14,7 +14,7 @@ import React, { useCallback, useReducer } from "react";
 // };
 const Shop = (props) => {
   // const [products, dispath] = useReducer(productReducer, []);
-  const {dispath,products}=props
+  const {dispath,produc}=props
   const addProduct = (item) => {
     fetch(
       "https://practice-react-d0abc-default-rtdb.firebaseio.com/newProducts.json",
@@ -27,7 +27,7 @@ const Shop = (props) => {
       response.json().then((responseDate) => {
         dispath({
           type: "ADD",
-          product: { id: products.name, ...item },
+          product: { id: produc.name, ...item },
         });
       });
     })

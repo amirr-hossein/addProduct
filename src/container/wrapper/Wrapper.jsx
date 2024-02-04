@@ -27,7 +27,7 @@ const Wrapper = (props) => {
         >
           <Shop produc={products} dispath={dispath} themeForm={props.theme} />
         </div>
-        <div className="absolute bottom-[24px] right-[36.3%]">
+        <div className="absolute bottom-[24px] right-[50%] productList">
         <ProductList products={products} />
         </div>
       </>

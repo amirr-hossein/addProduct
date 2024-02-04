@@ -26,35 +26,51 @@ const ProductForm = (props) => {
   };
   return (
     <>
-      <h1 className="text-[50px] font-black mb-[38px]">
-        اضافه کردن محصولات
-      </h1>
+      <h1 className="text-[50px] font-black mb-[38px]">اضافه کردن محصولات</h1>
       <form className="flex flex-col items-center" action="">
-        <div className="flex flex-col items-end">
-          <label htmlFor={"text"}>اسم محصول</label>
+        <div className="flex flex-col relative items-end hoverInput relative">
           <Input
-            id={"text"}
             type={"text"}
             value={state.name}
             change={(event) =>
               dispatch({ type: "name", checkingForm: event.target.value })
             }
             dir={"rtl"}
-            className={"w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"}
+            className={
+              "w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"
+            }
           />
+          <span
+            className="pointer-events-none absolute text-[#365486] text-[20px] font-bold bottom-0 transition-all"
+            style={{
+              transform: state.name ? "translateY(-24px)" : "translateY(0)",
+              fontSize: state.name ? "15px" : "20px",
+            }}
+          >
+            اسم محصول
+          </span>
         </div>
-        <div className="flex flex-col items-end">
-          <label htmlFor={"number"}>تعداد محصول</label>
+        <div className="flex flex-col items-end hoverInput relative mt-[30px]">
           <Input
-            id={"number"}
             type={"number"}
             value={state.number}
             change={(event) =>
               dispatch({ type: "number", checkingForm: event.target.value })
             }
             dir={"rtl"}
-            className={"w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"}
+            className={
+              "w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"
+            }
           />
+          <span
+            className="pointer-events-none absolute text-[#365486] text-[20px] font-bold bottom-0 transition-all"
+            style={{
+              transform: state.number ? "translateY(-24px)" : "translateY(0)",
+              fontSize: state.number ? "15px" : "20px",
+            }}
+          >
+            تعداد محصول
+          </span>
         </div>
         <Button
           className={

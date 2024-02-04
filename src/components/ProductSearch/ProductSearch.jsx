@@ -6,7 +6,7 @@ const ProductSearch = (props) => {
   const [error, setError] = useState(false);
   const inputRef = useRef();
   useEffect(() => {
-    const timer=setTimeout(() => {
+    const timer = setTimeout(() => {
       if (productSearch === inputRef.current.value) {
         const query =
           productSearch.length === 0
@@ -32,30 +32,43 @@ const ProductSearch = (props) => {
           })
           .catch((error) => {
             setError(true);
-            console.log(error)
+            console.log(error);
           });
       }
     }, 500);
-    return ()=>{
-      clearTimeout(timer)
-    }
+    return () => {
+      clearTimeout(timer);
+    };
   }, [productSearch, onLoadProducts, inputRef]);
   return (
     <>
-      <form className="flex flex-col items-end" action="">
-        <label htmlFor={"search"}>جستجو</label>
+      <form className="flex flex-col items-end relative mt-[15px]" action="">
         <Input
           refs={inputRef}
-          id={"search"}
           value={productSearch}
           change={(e) => setProductSearch(e.target.value)}
           type={"search"}
-          className={"w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"}
+          className={
+            "w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"
+          }
           dir={"rtl"}
         />
-        {error ? <div className="w-full text-center">
-          <p className="mt-[24px] text-[#365486] text-[30px] font-bold">واکنشی انجام نشد </p>
-        </div> : null}
+        <span
+          className="pointer-events-none absolute text-[#365486] text-[20px] font-bold bottom-0 transition-all"
+          style={{
+            transform: productSearch ? "translateY(-24px)" : "translateY(0)",
+            fontSize: productSearch ? "15px" : "20px",
+          }}
+        >
+          جستجو
+        </span>
+        {error ? (
+          <div className="w-full text-center">
+            <p className="mt-[24px] text-[#365486] text-[30px] font-bold">
+              واکنشی انجام نشد{" "}
+            </p>
+          </div>
+        ) : null}
       </form>
     </>
   );
