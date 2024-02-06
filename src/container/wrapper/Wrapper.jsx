@@ -15,8 +15,9 @@ const productReducer = (state, action) => {
   }
 };
 const Wrapper = (props) => {
-  const [products, dispath] = useReducer(productReducer, []);
+  const [state, dispath] = useReducer(productReducer, []);
   const [theme, toggleTheme] = useDarkMode();
+
   const deleteProdct = (productId) => {
     fetch(
       `https://practice-react-d0abc-default-rtdb.firebaseio.com/newProducts/${productId}.json`,
@@ -26,7 +27,7 @@ const Wrapper = (props) => {
       }
     )
       .then(() => {
-        const updatedProducts = products.filter(
+        const updatedProducts = state.filter(
           (product) => product.id !== productId
         );
         dispath({ type: "SET", products: updatedProducts });
@@ -35,20 +36,23 @@ const Wrapper = (props) => {
         console.error("Error deleting product", error);
       });
   };
+
   const authContext = useContext(AuthContext);
   let content = <Auth />;
   if (authContext.isAuth) {
     content = (
       <>
         <div className="app flex justify-center items-center flex-col h-[78vh]">
-          <Shop product={products} dispath={dispath} themeForm={props.theme} />
+          <Shop product={state} dispath={dispath} themeForm={props.theme} />
         </div>
         <div className="absolute bottom-[24px] right-[50%] productList">
-          <ProductList products={products} delete={deleteProdct} />
+          <ProductList products={state} delete={deleteProdct} />
         </div>
       </>
     );
   }
+
   return content;
 };
+
 export default Wrapper;
