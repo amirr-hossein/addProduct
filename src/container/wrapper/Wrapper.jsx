@@ -7,7 +7,7 @@ import ProductList from "../../components/ProductList/ProductList";
 const productReducer = (state, action) => {
   switch (action.type) {
     case "SET":
-      return action.products;
+      return Object.values(action.products);
     case "ADD":
       return [...state, action.product];
     default:
@@ -15,11 +15,11 @@ const productReducer = (state, action) => {
   }
 };
 const Wrapper = (props) => {
-  const [state, dispath] = useReducer(productReducer, []);
+  const [products, dispath] = useReducer(productReducer, []);
   const [theme, toggleTheme] = useDarkMode();
 
-  const deleteProdct = (productId) => {
-    fetch(
+  const deleteProdct = async (productId) => {
+    await fetch(
       `https://practice-react-d0abc-default-rtdb.firebaseio.com/newProducts/${productId}.json`,
       {
         method: "DELETE",
@@ -27,7 +27,7 @@ const Wrapper = (props) => {
       }
     )
       .then(() => {
-        const updatedProducts = state.filter(
+        const updatedProducts = products.filter(
           (product) => product.id !== productId
         );
         dispath({ type: "SET", products: updatedProducts });
@@ -43,10 +43,15 @@ const Wrapper = (props) => {
     content = (
       <>
         <div className="app flex justify-center items-center flex-col h-[78vh]">
-          <Shop product={state} dispath={dispath} themeForm={props.theme} />
+          <Shop product={products} dispath={dispath} themeForm={props.theme} />
         </div>
         <div className="absolute bottom-[24px] right-[50%] productList">
-          <ProductList products={state} delete={deleteProdct} />
+          {/* <ProductList products={products} delete={deleteProdct} /> */}
+          {/* // در جایی که ProductList فراخوانی می‌شود */}
+          <ProductList
+            products={Object.values(products)}
+            delete={deleteProdct}
+          />
         </div>
       </>
     );
