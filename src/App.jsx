@@ -1,12 +1,14 @@
 import Wrapper from "./container/wrapper/wrapper";
 import useDarkMode from "./hooks/Them";
-import Auth from "./components/auth/Authtication";
+// import Auth from "./components/auth/Authtication";
 import { AuthContext } from "./context/Auth";
 import { useContext } from "react";
+import AuthSignUp from "./components/auth/SignUp";
+import Login from "./components/auth/Login";
 const App = () => {
   const [theme, toggleTheme] = useDarkMode();
   const authContext = useContext(AuthContext);
-  let content = <Auth />;
+  let content = <AuthSignUp />;
   if (authContext.isAuth) {
     content = (
       <>
@@ -37,6 +39,11 @@ const App = () => {
         </div>
       </>
     );
+  }else{
+    <>
+        <Login/>
+        {/* <AuthSignUp /> */}
+    </>
   }
   return content;
 };
