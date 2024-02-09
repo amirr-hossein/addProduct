@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
-import { onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { onAuthStateChanged, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../firebase/firebase'; // اینجا مسیر فایل firebaseConfig.js خودتان را قرار دهید
 
 export const AuthContext = createContext();
@@ -15,13 +15,11 @@ const AuthContextProvider = (props) => {
         setUser(user);
       } else {
         setIsLoggedIn(false);
-        setUser(null);
       }
     });
 
     return () => unsubscribe();
   }, []);
-
   const loginHandler = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);

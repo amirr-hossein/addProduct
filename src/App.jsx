@@ -1,6 +1,5 @@
 import Wrapper from "./container/wrapper/wrapper";
 import useDarkMode from "./hooks/Them";
-// import Auth from "./components/auth/Authtication";
 import { AuthContext } from "./context/Auth";
 import { useContext } from "react";
 import AuthSignUp from "./components/auth/SignUp";
@@ -8,8 +7,20 @@ import Login from "./components/auth/Login";
 const App = () => {
   const [theme, toggleTheme] = useDarkMode();
   const authContext = useContext(AuthContext);
-  let content = <AuthSignUp />;
-  if (authContext.isAuth) {
+
+  let content;
+
+  if (!authContext.isAuth) {
+    // اگر کاربر وارد نشده باشد
+    content = (
+      <>
+        {authContext.user ? <Login/> : <AuthSignUp />}
+        <Login/>
+        
+      </>
+    );
+  } else{
+    // اگر کاربر وارد شده باشد
     content = (
       <>
         <div className="relative">
@@ -28,23 +39,31 @@ const App = () => {
               type="button"
               className="w-[200px] h-[74px] mt-[36px] mr-[33px] rounded-[20px] opacity-[70%] text-[30px] font-bold"
               style={{
-                backgroundColor:theme==="dark"?"#7FC7D9":"#0F1035",
+                backgroundColor: theme === "dark" ? "#7FC7D9" : "#0F1035",
                 color: theme === "dark" ? "#000" : "#DCF2F1",
               }}
               onClick={toggleTheme}
             >
-              {theme==="dark"?<p>تاریک</p>:<p>روشن</p>}
+              {theme === "dark" ? <p>تاریک</p> : <p>روشن</p>}
+            </button>
+            <button
+              type="button"
+              className="w-[200px] h-[74px] mt-[36px] mr-[33px] rounded-[20px] opacity-[70%] text-[30px] font-bold"
+              style={{
+                backgroundColor: "#FF0000",
+                color: "#FFFFFF",
+              }}
+              onClick={authContext.logout}
+            >
+              خروج
             </button>
           </div>
         </div>
       </>
     );
-  }else{
-    <>
-        <Login/>
-        {/* <AuthSignUp /> */}
-    </>
   }
+
   return content;
 };
+
 export default App;
