@@ -7,20 +7,20 @@ import Login from "./components/auth/Login";
 const App = () => {
   const [theme, toggleTheme] = useDarkMode();
   const authContext = useContext(AuthContext);
-
   let content;
-
   if (!authContext.isAuth) {
-    // اگر کاربر وارد نشده باشد
     content = (
       <>
-        {authContext.user ? <Login/> : <AuthSignUp />}
-        <Login/>
-        
+        {authContext.user ? (
+          <Login />
+        ) : (
+          <>
+            <Login /> <AuthSignUp />
+          </>
+        )}
       </>
     );
-  } else{
-    // اگر کاربر وارد شده باشد
+  } else {
     content = (
       <>
         <div className="relative">
@@ -62,8 +62,6 @@ const App = () => {
       </>
     );
   }
-
   return content;
 };
-
 export default App;

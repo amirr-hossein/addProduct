@@ -1,6 +1,12 @@
-import React, { useState, createContext, useEffect } from 'react';
-import { onAuthStateChanged, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { auth } from '../firebase/firebase'; // اینجا مسیر فایل firebaseConfig.js خودتان را قرار دهید
+import React, { useState, createContext, useEffect } from "react";
+import {
+  onAuthStateChanged,
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { auth } from "../firebase/firebase";
 
 export const AuthContext = createContext();
 
@@ -24,7 +30,7 @@ const AuthContextProvider = (props) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      console.error('Login Error:', error.message);
+      console.error("Login Error:", error.message);
     }
   };
 
@@ -32,7 +38,7 @@ const AuthContextProvider = (props) => {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      console.error('Signup Error:', error.message);
+      console.error("Signup Error:", error.message);
     }
   };
 
@@ -40,7 +46,7 @@ const AuthContextProvider = (props) => {
     try {
       await signOut(auth);
     } catch (error) {
-      console.error('Logout Error:', error.message);
+      console.error("Logout Error:", error.message);
     }
   };
 
@@ -60,4 +66,3 @@ const AuthContextProvider = (props) => {
 };
 
 export default AuthContextProvider;
-
