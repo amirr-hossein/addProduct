@@ -7,12 +7,19 @@ import Login from "./components/auth/Login";
 const App = () => {
   const [theme, toggleTheme] = useDarkMode();
   const authContext = useContext(AuthContext);
+  function getEmailUsername(email) {
+    const emailParts = email.split("@");
+    if (emailParts.length >= 2) {
+      return emailParts[0];
+    }
+    return email;
+  }
   let content;
   if (!authContext.isAuth) {
     content = (
       <>
         {authContext.user ? (
-          <Login />
+          <><Login/><AuthSignUp/></>
         ) : (
           <>
             <Login /> <AuthSignUp />
@@ -35,33 +42,41 @@ const App = () => {
             <Wrapper theme={theme} />
           </div>
           <div className="absolute top-0 right-0">
-            <button
-              type="button"
-              className="w-[200px] h-[74px] mt-[36px] mr-[33px] rounded-[20px] opacity-[70%] text-[30px] font-bold"
-              style={{
-                backgroundColor: theme === "dark" ? "#7FC7D9" : "#0F1035",
-                color: theme === "dark" ? "#000" : "#DCF2F1",
-              }}
-              onClick={toggleTheme}
-            >
-              {theme === "dark" ? <p>تاریک</p> : <p>روشن</p>}
-            </button>
-            <button
-              type="button"
-              className="w-[200px] h-[74px] mt-[36px] mr-[33px] rounded-[20px] opacity-[70%] text-[30px] font-bold"
-              style={{
-                backgroundColor: "#FF0000",
-                color: "#FFFFFF",
-              }}
-              onClick={authContext.logout}
-            >
-              خروج
-            </button>
+            {authContext.user && (
+              <>
+                <p style={{ color: "black" }}>
+                  {getEmailUsername(authContext.user.email)}
+                </p>
+                <button
+                  type="button"
+                  className="w-[200px] h-[74px] mt-[36px] mr-[33px] rounded-[20px] opacity-[70%] text-[30px] font-bold"
+                  style={{
+                    backgroundColor: theme === "dark" ? "#7FC7D9" : "#0F1035",
+                    color: theme === "dark" ? "#000" : "#DCF2F1",
+                  }}
+                  onClick={toggleTheme}
+                >
+                  {theme === "dark" ? <p>تاریک</p> : <p>روشن</p>}
+                </button>
+                <button
+                  type="button"
+                  className="w-[200px] h-[74px] mt-[36px] mr-[33px] rounded-[20px] opacity-[70%] text-[30px] font-bold"
+                  style={{
+                    backgroundColor: "#FF0000",
+                    color: "#FFFFFF",
+                  }}
+                  onClick={authContext.logout}
+                >
+                  خروج
+                </button>
+              </>
+            )}
           </div>
         </div>
       </>
     );
   }
+
   return content;
 };
 export default App;

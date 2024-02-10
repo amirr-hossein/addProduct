@@ -1,7 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 import {
   onAuthStateChanged,
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -11,6 +10,7 @@ import { auth } from "../firebase/firebase";
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
+  const [loading, setLoading] = useState(true); // اضافه شده
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -22,10 +22,12 @@ const AuthContextProvider = (props) => {
       } else {
         setIsLoggedIn(false);
       }
+      setLoading(false); // پس از انجام بررسی، بر روی false قرار داده شده
     });
 
     return () => unsubscribe();
   }, []);
+
   const loginHandler = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -50,6 +52,12 @@ const AuthContextProvider = (props) => {
     }
   };
 
+  if (loading) {
+    // اگر در حال بررسی وضعیت احراز هویت هستیم، این قسمت نمایش داده می‌شود
+    return <div>Loading...</div>;
+  }
+
+  // در غیر اینصورت، محتوای مناسب به کاربر نمایش داده می‌شود
   return (
     <AuthContext.Provider
       value={{
