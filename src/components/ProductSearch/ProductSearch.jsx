@@ -54,10 +54,10 @@ const ProductSearch = (props) => {
           dir={"rtl"}
         />
         <span
-          className="pointer-events-none absolute text-[#365486] text-[20px] font-bold bottom-0 transition-all"
+          className="pointer-events-none absolute text-[#365486] text-[16px] font-regular bottom-[3px] transition-all"
           style={{
-            transform: productSearch ? "translateY(-24px)" : "translateY(0)",
-            fontSize: productSearch ? "15px" : "20px",
+            transform: productSearch ? "translateY(-24px)" : null,
+            fontSize: productSearch ? "12px" : null,
           }}
         >
           جستجو

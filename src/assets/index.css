@@ -19,3 +19,7 @@ input[type=number]::-webkit-inner-spin-button {
 .productList{
     transform: translate(53%, 0);
 }
+input:focus ~ span{
+    transform: translateY(-24px);
+    font-size: 12px;
+}

@@ -10,7 +10,7 @@ import { auth } from "../firebase/firebase";
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-  const [loading, setLoading] = useState(true); // اضافه شده
+  const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -22,7 +22,7 @@ const AuthContextProvider = (props) => {
       } else {
         setIsLoggedIn(false);
       }
-      setLoading(false); // پس از انجام بررسی، بر روی false قرار داده شده
+      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -53,11 +53,9 @@ const AuthContextProvider = (props) => {
   };
 
   if (loading) {
-    // اگر در حال بررسی وضعیت احراز هویت هستیم، این قسمت نمایش داده می‌شود
     return <div>Loading...</div>;
   }
 
-  // در غیر اینصورت، محتوای مناسب به کاربر نمایش داده می‌شود
   return (
     <AuthContext.Provider
       value={{

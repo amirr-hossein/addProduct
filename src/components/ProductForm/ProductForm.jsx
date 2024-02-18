@@ -28,7 +28,7 @@ const ProductForm = (props) => {
     <>
       <h1 className="text-[50px] font-black mb-[38px]">اضافه کردن محصولات</h1>
       <form className="flex flex-col items-center" action="">
-        <div className="flex flex-col relative items-end hoverInput relative">
+        <div className="flex flex-col items-end hoverInput relative">
           <Input
             type={"text"}
             value={state.name}
@@ -41,10 +41,10 @@ const ProductForm = (props) => {
             }
           />
           <span
-            className="pointer-events-none absolute text-[#365486] text-[20px] font-bold bottom-0 transition-all"
+            className="pointer-events-none absolute text-[#365486] text-[16px] font-regular bottom-[3px] transition-all"
             style={{
-              transform: state.name ? "translateY(-24px)" : "translateY(0)",
-              fontSize: state.name ? "15px" : "20px",
+              transform: state.name ? "translateY(-24px)" : null,
+              fontSize: state.name ? "12px" : null,
             }}
           >
             اسم محصول
@@ -63,10 +63,10 @@ const ProductForm = (props) => {
             }
           />
           <span
-            className="pointer-events-none absolute text-[#365486] text-[20px] font-bold bottom-0 transition-all"
+            className="pointer-events-none absolute text-[#365486] text-[16px] font-regular bottom-[3px] transition-all"
             style={{
-              transform: state.number ? "translateY(-24px)" : "translateY(0)",
-              fontSize: state.number ? "15px" : "20px",
+              transform: state.name ? "translateY(-24px)" : null,
+              fontSize: state.name ? "12px" : null,
             }}
           >
             تعداد محصول
