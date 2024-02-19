@@ -26,7 +26,7 @@ const ProductForm = (props) => {
   };
   return (
     <>
-      <h1 className="">اضافه کردن محصولات</h1>
+      <h1 className="text-[48px] font-bold">اضافه کردن محصولات</h1>
       <form className="" action="">
         <div className="hoverInput">
           <Input

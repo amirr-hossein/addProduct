@@ -48,9 +48,7 @@ const ProductSearch = (props) => {
           value={productSearch}
           change={(e) => setProductSearch(e.target.value)}
           type={"search"}
-          className={
-            ""
-          }
+          className={""}
           dir={"rtl"}
         />
         <span
@@ -65,9 +63,7 @@ const ProductSearch = (props) => {
       </form>
       {error ? (
         <div className="">
-          <p className="">
-            واکنشی انجام نشد
-          </p>
+          <img src="./src/assets/img/charecterLogoNotProduct.png" alt="" />
         </div>
       ) : null}
     </>

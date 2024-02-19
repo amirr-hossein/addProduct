@@ -33,8 +33,6 @@ const AuthContextProvider = (props) => {
   const loginHandler = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // await createUserWithEmailAndPassword(auth, email, password);
-
     } catch (error) {
       console.error("Login Error:", error.message);
     }
@@ -57,10 +55,16 @@ const AuthContextProvider = (props) => {
   };
 
   if (loading) {
-    return <div
-    style={{
-      background: theme === "dark" ? "#0F1035" : "#DCF2F1",
-    }}>Loading...</div>;
+    return (
+      <div
+        className="flex justify-center h-[100vh] items-center"
+        style={{
+          background: theme === "dark" ? "#F7F7F7" : "#0B0D0C",
+        }}
+      >
+        <span class="loader"></span>
+      </div>
+    );
   }
 
   return (

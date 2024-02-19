@@ -36,7 +36,6 @@ const App = () => {
             className=""
             style={{
               background: theme === "dark" ? "#F7F7F7" : "#0B0D0C",
-              color: theme === "dark" ? "#EA526F" : "#EA526F",
               transition: ".2s all",
             }}
           >
@@ -50,7 +49,7 @@ const App = () => {
                 </p>
                 <button
                   type="button"
-                  className=""
+                  className="w-[122px] h-[58px]"
                   style={{
                     backgroundColor: theme === "dark" ? "#6B9080" : "#6B9080",
                     color: theme === "dark" ? "#fff" : "#fff",
