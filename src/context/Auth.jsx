@@ -1,4 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
+import useDarkMode from "../hooks/Them";
 import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
@@ -10,6 +11,7 @@ import { auth } from "../firebase/firebase";
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
+  const [theme, toggleTheme] = useDarkMode();
   const [loading, setLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
@@ -53,7 +55,10 @@ const AuthContextProvider = (props) => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div
+    style={{
+      background: theme === "dark" ? "#0F1035" : "#DCF2F1",
+    }}>Loading...</div>;
   }
 
   return (

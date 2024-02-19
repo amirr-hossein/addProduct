@@ -6,16 +6,16 @@ const ProductList = (props) => {
   };
   return (
     <>
-      <ul className="h-[243px] overflow-auto space-y-6">
+      <ul className="">
         {props.products.map((item) => (
           <li
           key={`${item.id}-${item.name}-${item.number}`}
-            className="bg-[#7FC7D9] w-[292px] h-[65px] rounded-[20px] flex justify-between flex-row-reverse"
+            className=""
           >
-            <span className="text-[21px] font-bold mr-[16px] mt-[20px]">
+            <span className="">
               {item.name}
             </span>
-            <span className="text-[21px] font-bold ml-[16px] mt-[20px]">
+            <span className="">
               {item.number}
             </span>
             <Button click={() => handleDeleteProduct(item.id)}>delete</Button>

@@ -42,19 +42,19 @@ const ProductSearch = (props) => {
   }, [productSearch, onLoadProducts, inputRef]);
   return (
     <>
-      <form className="flex flex-col items-end relative mt-[15px]" action="">
+      <form className="" action="">
         <Input
           refs={inputRef}
           value={productSearch}
           change={(e) => setProductSearch(e.target.value)}
           type={"search"}
           className={
-            "w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"
+            ""
           }
           dir={"rtl"}
         />
         <span
-          className="pointer-events-none absolute text-[#365486] text-[16px] font-regular bottom-[3px] transition-all"
+          className=""
           style={{
             transform: productSearch ? "translateY(-24px)" : null,
             fontSize: productSearch ? "12px" : null,
@@ -64,8 +64,8 @@ const ProductSearch = (props) => {
         </span>
       </form>
       {error ? (
-        <div className="w-full text-center">
-          <p className="mt-[24px] text-[#365486] text-[30px] font-bold">
+        <div className="">
+          <p className="">
             واکنشی انجام نشد
           </p>
         </div>

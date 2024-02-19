@@ -13,13 +13,31 @@
     font-family: iranSans-regular;
     src: url(../../public/font/IRANSansX-Regular.ttf);
 }
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
 .productList{
     transform: translate(53%, 0);
 }
 input:focus ~ span{
     transform: translateY(-24px);
     font-size: 12px;
+}
+.number-wrapper::before{
+    color: red;
+    content: "\25BC";
+    margin-bottom: 5px;
+    bottom: -.5em;
+}
+.number-wrapper::after{
+    color: blue;
+    content: "\25B2";
+    margin-top: 1px;
+}
+.number-wrapper:after,
+.number-wrapper:before {
+  position: absolute;
+  right: 5px;
+  width: 1.6em;
+  height: .9em;
+  font-size: 10px;
+  pointer-events: none;
+  background: #fff;
 }

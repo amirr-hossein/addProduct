@@ -26,9 +26,9 @@ const ProductForm = (props) => {
   };
   return (
     <>
-      <h1 className="text-[50px] font-black mb-[38px]">اضافه کردن محصولات</h1>
-      <form className="flex flex-col items-center" action="">
-        <div className="flex flex-col items-end hoverInput relative">
+      <h1 className="">اضافه کردن محصولات</h1>
+      <form className="" action="">
+        <div className="hoverInput">
           <Input
             type={"text"}
             value={state.name}
@@ -37,11 +37,11 @@ const ProductForm = (props) => {
             }
             dir={"rtl"}
             className={
-              "w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"
+              ""
             }
           />
           <span
-            className="pointer-events-none absolute text-[#365486] text-[16px] font-regular bottom-[3px] transition-all"
+            className=""
             style={{
               transform: state.name ? "translateY(-24px)" : null,
               fontSize: state.name ? "12px" : null,
@@ -50,7 +50,7 @@ const ProductForm = (props) => {
             اسم محصول
           </span>
         </div>
-        <div className="flex flex-col items-end hoverInput relative mt-[30px]">
+        <div className="hoverInput number-wrapper">
           <Input
             type={"number"}
             value={state.number}
@@ -59,11 +59,11 @@ const ProductForm = (props) => {
             }
             dir={"rtl"}
             className={
-              "w-[250px] bg-[#DCF2F1] border-b-[#0F1035] border-b-2 border-solid outline-none"
+              ""
             }
           />
           <span
-            className="pointer-events-none absolute text-[#365486] text-[16px] font-regular bottom-[3px] transition-all"
+            className=""
             style={{
               transform: state.name ? "translateY(-24px)" : null,
               fontSize: state.name ? "12px" : null,
@@ -74,7 +74,7 @@ const ProductForm = (props) => {
         </div>
         <Button
           className={
-            "w-[292px] h-[74px] opacity-[70%] rounded-[20px] text-[32px] font-bold mt-[28px] mb-[20px]"
+            ""
           }
           style={{
             backgroundColor: props.themeBtn === "dark" ? "#7FC7D9" : "#0F1035",

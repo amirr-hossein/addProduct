@@ -28,8 +28,10 @@ const Shop = (props) => {
   }, []);
   return (
     <>
+      <div className="">
       <ProductForm add={addProduct} themeBtn={props.themeForm} />
       <ProductSearch onLoadProducts={searchProductHandler} />
+      </div>
     </>
   );
 };
