@@ -2,7 +2,6 @@ import Wrapper from "./container/wrapper/Wrapper";
 import useDarkMode from "./hooks/Them";
 import { AuthContext } from "./context/Auth";
 import { useContext } from "react";
-import AuthSignUp from "./components/auth/SignUp";
 import Login from "./components/auth/Login";
 const App = () => {
   const [theme, toggleTheme] = useDarkMode();
@@ -21,11 +20,10 @@ const App = () => {
         {authContext.user ? (
           <>
             <Login />
-            <AuthSignUp />
           </>
         ) : (
           <>
-            <Login /> <AuthSignUp />
+            <Login /> 
           </>
         )}
       </>

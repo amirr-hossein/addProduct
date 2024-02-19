@@ -1,7 +1,7 @@
-const Button=(props)=>{
+const Button=({className,click,style,children,type})=>{
     return(
         <>
-            <button onClick={props.click} className={`${props.className}`} style={props.style}>{props.children}</button>
+            <button type={type} onClick={click} style={style} className={`${className}`}>{children}</button>
         </>
     )
 }

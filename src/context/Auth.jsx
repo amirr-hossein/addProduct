@@ -33,6 +33,8 @@ const AuthContextProvider = (props) => {
   const loginHandler = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      // await createUserWithEmailAndPassword(auth, email, password);
+
     } catch (error) {
       console.error("Login Error:", error.message);
     }
