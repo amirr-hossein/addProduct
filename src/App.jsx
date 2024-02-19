@@ -49,7 +49,7 @@ const App = () => {
                 </p>
                 <button
                   type="button"
-                  className="w-[122px] h-[58px]"
+                  className="w-[122px] h-[58px] rounded-[16px]"
                   style={{
                     backgroundColor: theme === "dark" ? "#6B9080" : "#6B9080",
                     color: theme === "dark" ? "#fff" : "#fff",

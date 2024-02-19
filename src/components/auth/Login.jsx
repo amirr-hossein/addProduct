@@ -13,9 +13,9 @@ const AuthSignIn = () => {
     authContext.signup(email, password);
   };
   return (
-    <div className="flex flex-row-reverse h-[100vh] justify-center items-center">
+    <div className="flex lg:flex-row-reverse flex-col-reverse h-[100vh] justify-center items-center">
       <div className="flex flex-col">
-        <h2 className="text-[#EA526F] text-[48px] font-bold text-end mb-[32px]">
+        <h2 className="text-[#EA526F] sm:text-[48px] text-[40px] font-bold text-end mb-[32px]">
           ورود یا ثبت نام
         </h2>
         <form className="flex flex-col" onSubmit={signInHandler}>
@@ -26,14 +26,13 @@ const AuthSignIn = () => {
               change={(e) => setEmail(e.target.value)}
               dir={"rtl"}
               className={
-                "outline-none border-b-[3px] border-b-[#6B9080] w-[456px] h-[58px]"
+                "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px]"
               }
             />
             <span
-              className="pointer-events-none absolute text-[#6B9080] text-[24px] font-regular bottom-[3px] transition-all"
+              className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
               style={{
                 transform: email ? "translateY(-40px)" : null,
-                fontSize: email ? "16px" : null,
               }}
             >
               ایمیل
@@ -46,14 +45,13 @@ const AuthSignIn = () => {
               change={(e) => setPassword(e.target.value)}
               dir={"rtl"}
               className={
-                "outline-none border-b-[3px] border-b-[#6B9080] w-[456px] h-[58px]"
+                "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px]"
               }
             />
             <span
-              className="pointer-events-none absolute text-[#6B9080] text-[24px] font-regular bottom-[3px] transition-all"
+              className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
               style={{
                 transform: password ? "translateY(-40px)" : null,
-                fontSize: password ? "16px" : null,
               }}
             >
               رمز عبور
@@ -62,7 +60,7 @@ const AuthSignIn = () => {
           <Button
             type={"submit"}
             className={
-              "w-[456px] h-[58px] bg-[#6B9080] rounded-[16px] mt-[24px] text-[#fff] text-[24px]"
+              "sm:w-[456px] w-[328px] sm:h-[58px] h-[46px] bg-[#6B9080] rounded-[16px] mt-[24px] text-[#fff] sm:text-[24px] text-[16px]"
             }
           >
             ورود یا ثبت نام
@@ -70,7 +68,7 @@ const AuthSignIn = () => {
         </form>
       </div>
 
-        <img src="./src/assets/img/charecterLogoLogin.png" alt="" />
+        <img className="w-[360px] h-[360px] sm:w-[552px] sm:h-[552px]" src="./src/assets/img/charecterLogoLogin.png" alt="" />
 
     </div>
   );

@@ -20,7 +20,23 @@ input:focus ~ span {
   transform: translateY(-40px);
   font-size: 16px;
 }
+input:invalid ~ span {
+  transform: translateY(-40px);
+  font-size: 16px;
+}
+@media screen and (max-width: 640px) {
+  input:focus ~ span {
+    transform: translateY(-40px);
+    font-size: 13px;
+  }
+  input:invalid ~ span {
+    transform: translateY(-40px);
+    font-size: 13px;
+  }
+}
 .loader {
+  width: 50px;
+  height: 50px;
   display: inline-block;
   position: relative;
 }
