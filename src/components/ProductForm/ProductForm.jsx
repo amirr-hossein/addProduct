@@ -74,15 +74,11 @@ const ProductForm = (props) => {
         </div>
         <Button
           className={
-            ""
+            "text-white bg-[#6B9080] w-[456px] h-[58px] rounded-[16px] text-[24px] font-regular"
           }
-          style={{
-            backgroundColor: props.themeBtn === "dark" ? "#7FC7D9" : "#0F1035",
-            color: props.themeBtn === "dark" ? "#000" : "#DCF2F1",
-          }}
           click={submitHandler}
         >
-          ثبت
+          افزودن محصول
         </Button>
       </form>
     </>

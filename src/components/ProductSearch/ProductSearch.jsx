@@ -42,6 +42,7 @@ const ProductSearch = (props) => {
   }, [productSearch, onLoadProducts, inputRef]);
   return (
     <>
+      <h1 className="text-[48px] text-[#EA526F] font-bold">محصولات موجود</h1>
       <form className="" action="">
         <Input
           refs={inputRef}

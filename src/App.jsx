@@ -49,15 +49,15 @@ const App = () => {
                 </p>
                 <button
                   type="button"
-                  className="w-[122px] h-[58px] rounded-[16px]"
+                  className="w-[122px] h-[58px] rounded-[16px] relative text-[24px]"
                   style={{
                     backgroundColor: theme === "dark" ? "#6B9080" : "#6B9080",
                     color: theme === "dark" ? "#fff" : "#fff",
                   }}
                   onClick={toggleTheme}
                 >
-                  {theme === "dark" ? <p>تاریک</p> : <p>روشن</p>}
-                  <span className="">
+                  {theme === "dark" ? <p className="-mr-[17px]">تاریک</p> : <p className="-mr-[17px] -mt-[10px]">روشن</p>}
+                  <span className="absolute top-[17px] left-[13px]">
                     {theme === "dark" ? (
                       <svg
                         width="23"
@@ -89,7 +89,7 @@ const App = () => {
                 </button>
                 <button
                   type="button"
-                  className=""
+                  className="w-[122px] h-[58px] rounded-[16px] relative text-[24px]"
                   style={{
                     backgroundColor: "#FF0000",
                     color: "#FFFFFF",

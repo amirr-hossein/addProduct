@@ -13,9 +13,6 @@
   font-family: iranSans-regular;
   src: url(../../public/font/IRANSansX-Regular.ttf);
 }
-.productList {
-  transform: translate(53%, 0);
-}
 input:focus ~ span {
   transform: translateY(-40px);
   font-size: 16px;

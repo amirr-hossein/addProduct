@@ -6,22 +6,27 @@ const ProductList = (props) => {
   };
   return (
     <>
-      <ul className="">
+      <table className="">
+        <tr>
+          <th>نام محصول</th>
+          <th>تعداد</th>
+          <th>عملیات</th>
+        </tr>
         {props.products.map((item) => (
-          <li
+          <tr
           key={`${item.id}-${item.name}-${item.number}`}
             className=""
           >
-            <span className="">
+            <td className="">
               {item.name}
-            </span>
-            <span className="">
+            </td>
+            <td className="">
               {item.number}
-            </span>
+            </td>
             <Button click={() => handleDeleteProduct(item.id)}>delete</Button>
-          </li>
+          </tr>
         ))}
-      </ul>
+      </table>
     </>
   );
 };
