@@ -64,3 +64,6 @@ input:invalid ~ span {
     opacity: 0;
   }
 }
+.user{
+  border: 2px solid #6b9080;
+}

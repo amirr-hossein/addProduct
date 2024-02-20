@@ -28,7 +28,7 @@ const ProductForm = (props) => {
     <>
       <h1 className="text-[48px] font-bold text-[#EA526F]">اضافه کردن محصولات</h1>
       <form className="" action="">
-        <div className="hoverInput">
+        <div className="hoverInput relative flex flex-col">
           <Input
             type={"text"}
             value={state.name}
@@ -37,20 +37,19 @@ const ProductForm = (props) => {
             }
             dir={"rtl"}
             className={
-              ""
+              "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px]"
             }
           />
           <span
-            className=""
-            style={{
-              transform: state.name ? "translateY(-24px)" : null,
-              fontSize: state.name ? "12px" : null,
-            }}
+              className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
+              style={{
+                transform: state.name ? "translateY(-40px)" : null,
+              }}
           >
             اسم محصول
           </span>
         </div>
-        <div className="hoverInput number-wrapper">
+        <div className="hoverInput number-wrapper relative flex flex-col">
           <Input
             type={"number"}
             value={state.number}
@@ -59,15 +58,14 @@ const ProductForm = (props) => {
             }
             dir={"rtl"}
             className={
-              ""
+              "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px]"
             }
           />
           <span
-            className=""
-            style={{
-              transform: state.name ? "translateY(-24px)" : null,
-              fontSize: state.name ? "12px" : null,
-            }}
+              className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
+              style={{
+                transform: state.number ? "translateY(-40px)" : null,
+              }}
           >
             تعداد محصول
           </span>

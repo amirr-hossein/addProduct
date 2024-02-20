@@ -13,13 +13,13 @@ const AuthSignIn = () => {
     authContext.signup(email, password);
   };
   return (
-    <div className="flex lg:flex-row-reverse flex-col-reverse h-[100vh] justify-center items-center">
+    <div className="flex lg:flex-row flex-col-reverse h-[100vh] justify-center items-center">
       <div className="flex flex-col">
-        <h2 className="text-[#EA526F] sm:text-[48px] text-[40px] font-bold text-end mb-[32px]">
+        <h2 className="text-[#EA526F] sm:text-[48px] text-[40px] font-bold text-start mb-[32px]">
           ورود یا ثبت نام
         </h2>
         <form className="flex flex-col" onSubmit={signInHandler}>
-          <div className="hoverInput relative flex flex-col items-end">
+          <div className="hoverInput relative flex flex-col">
             <Input
               type={"text"}
               value={email}
@@ -38,7 +38,7 @@ const AuthSignIn = () => {
               ایمیل
             </span>
           </div>
-          <div className="mt-[24px] hoverInput relative flex flex-col items-end">
+          <div className="mt-[24px] hoverInput relative flex flex-col">
             <Input
               type={"password"}
               value={password}
