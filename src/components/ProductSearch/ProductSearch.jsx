@@ -42,31 +42,32 @@ const ProductSearch = (props) => {
   }, [productSearch, onLoadProducts, inputRef]);
   return (
     <>
-      <h1 className="text-[48px] text-[#EA526F] font-bold">محصولات موجود</h1>
-      <form className="" action="">
-        <Input
-          refs={inputRef}
-          value={productSearch}
-          change={(e) => setProductSearch(e.target.value)}
-          type={"search"}
-          className={""}
-          dir={"rtl"}
-        />
-        <span
-          className=""
-          style={{
-            transform: productSearch ? "translateY(-24px)" : null,
-            fontSize: productSearch ? "12px" : null,
-          }}
-        >
-          جستجو
-        </span>
-      </form>
-      {error ? (
-        <div className="">
-          <img src="./src/assets/img/charecterLogoNotProduct.png" alt="" />
-        </div>
-      ) : null}
+      <div>
+        <h1 className="text-[48px] text-[#EA526F] font-bold mb-[32px]">محصولات موجود</h1>
+        <form className="hoverInput relative flex flex-col mb-[32px]" action="">
+          <Input
+            refs={inputRef}
+            value={productSearch}
+            change={(e) => setProductSearch(e.target.value)}
+            type={"search"}
+            className={"outline-none border-b-[3px] border-b-[#6B9080] sm:w-[552px] w-[328px] sm:h-[58px] h-[46px] bg-transparent"}
+            dir={"rtl"}
+          />
+          <span
+              className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
+              style={{
+                transform: productSearch ? "translateY(-40px)" : null,
+              }}
+          >
+            جستجو
+          </span>
+        </form>
+        {error ? (
+          <div className="">
+            <img src="./src/assets/img/charecterLogoNotProduct.png" alt="" />
+          </div>
+        ) : null}
+      </div>
     </>
   );
 };

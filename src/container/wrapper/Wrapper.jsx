@@ -1,7 +1,9 @@
-import React, { useReducer } from "react";
+import React, { useReducer,useCallback } from "react";
 import Shop from "../Shop/Shop";
 import useDarkMode from "../../hooks/Them";
 import ProductList from "../../components/ProductList/ProductList";
+import ProductSearch from "../../components/ProductSearch/ProductSearch.jsx";
+
 const productReducer = (state, action) => {
   switch (action.type) {
     case "SET":
@@ -34,13 +36,22 @@ const Wrapper = (props) => {
         console.error("Error deleting product", error);
       });
   };
+  const searchProductHandler = useCallback((items) => {
+    dispath({ type: "SET", products: items });
+  }, []);
   return (
     <>
-      <div className="app">
-        <Shop product={products} dispath={dispath} themeForm={props.theme} />
-      </div>
-      <div className="productList">
-        <ProductList products={Object.values(products)} delete={deleteProdct} />
+      <div className="flex justify-between">
+        <div className="app">
+          <Shop product={products} dispath={dispath} themeForm={props.theme} />
+        </div>
+        <div className="productList ml-[156px]">
+          <ProductSearch onLoadProducts={searchProductHandler} />
+          <ProductList
+            products={Object.values(products)}
+            delete={deleteProdct}
+          />
+        </div>
       </div>
     </>
   );

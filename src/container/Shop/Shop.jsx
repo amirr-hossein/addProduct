@@ -1,6 +1,6 @@
 import ProductForm from "../../components/ProductForm/ProductForm.jsx";
-import ProductSearch from "../../components/ProductSearch/ProductSearch.jsx";
-import React, { useCallback } from "react";
+// import ProductSearch from "../../components/ProductSearch/ProductSearch.jsx";
+import React from "react";
 const Shop = (props) => {
   const { dispath, product } = props;
   const addProduct = (item) => {
@@ -18,19 +18,14 @@ const Shop = (props) => {
           type: "ADD",
           product: { id: firebaseId,...item },
         });
-      });
+      }); 
     });
   };
 
-  console.log(product);
-  const searchProductHandler = useCallback((items) => {
-    dispath({ type: "SET", products: items });
-  }, []);
   return (
     <>
       <div className="">
       <ProductForm add={addProduct} themeBtn={props.themeForm} />
-      <ProductSearch onLoadProducts={searchProductHandler} />
       </div>
     </>
   );
