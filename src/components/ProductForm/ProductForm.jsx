@@ -50,6 +50,7 @@ const ProductForm = (props) => {
               className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
               style={{
                 transform: state.name ? "translateY(-40px)" : null,
+                fontSize:state.name?"16px":null,
               }}
             >
               اسم محصول

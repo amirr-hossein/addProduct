@@ -33,6 +33,7 @@ const AuthSignIn = () => {
               className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
               style={{
                 transform: email ? "translateY(-40px)" : null,
+                fontSize:email?"16px":null,
               }}
             >
               ایمیل
@@ -52,6 +53,7 @@ const AuthSignIn = () => {
               className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
               style={{
                 transform: password ? "translateY(-40px)" : null,
+                fontSize:password?"16px":null,
               }}
             >
               رمز عبور
