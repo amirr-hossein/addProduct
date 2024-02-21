@@ -24,9 +24,7 @@ const Shop = (props) => {
 
   return (
     <>
-      <div className="">
       <ProductForm add={addProduct} themeBtn={props.themeForm} />
-      </div>
     </>
   );
 };

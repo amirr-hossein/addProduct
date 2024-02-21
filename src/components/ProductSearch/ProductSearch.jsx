@@ -44,21 +44,20 @@
     return (
       <>
         <div>
-          <h1 className="text-[48px] text-[#EA526F] font-bold mb-[32px]">محصولات موجود</h1>
-          <form className="hoverInput relative flex flex-col mb-[32px]" action="">
+          <h1 className="xl:text-[48px] lg:text-[38px] md:text-[34px] text-[32px] text-[#EA526F] font-bold lg:mb-[32px] md:mb-[15px] mb-[16px]">محصولات موجود</h1>
+          <form className="hoverInput relative flex flex-col lg:mb-[32px] md:mb-[22px] mb-[24px]" action="">
             <Input
               refs={inputRef}
               value={productSearch}
               change={(e) => setProductSearch(e.target.value)}
               type={"search"}
-              className={"outline-none border-b-[3px] border-b-[#6B9080] sm:w-[552px] w-[328px] sm:h-[58px] h-[46px] bg-transparent"}
+              className={"outline-none border-b-[3px] border-b-[#6B9080] md:pr-0 pr-[25px] xl:w-[552px] lg:w-[450px] xl:h-[58px] md:w-[365px] lg:h-[54px] md:h-[50px] bg-transparent"}
               dir={"rtl"}
             />
             <span
-                className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
-                style={{
-                  transform: productSearch ? "translateY(-40px)" : null,
-                }}
+                className={`pointer-events-none absolute text-[#6B9080] xl:text-[24px] lg:text-[20px] font-regular bottom-[3px] transition-all mb-[12px] mr-[25px] md:mr-0 ${
+                  productSearch? "active" : ""
+                }`}
             >
               جستجو
             </span>

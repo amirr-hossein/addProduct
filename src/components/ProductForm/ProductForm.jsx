@@ -27,11 +27,11 @@ const ProductForm = (props) => {
   return (
     <>
       <div>
-        <h1 className="text-[48px] font-bold text-[#EA526F] mb-[32px]">
+        <h1 className="xl:text-[48px] lg:text-[38px] md:text-[34px] text-[32px] font-bold text-[#EA526F] lg:mb-[32px] md:mb-[15px] mb-[20px]">
           اضافه کردن محصولات
         </h1>
         <form className="" action="">
-          <div className="hoverInput relative flex flex-col mb-[32px]">
+          <div className="hoverInput relative flex flex-col lg:mb-[32px] md:mb-[22px] mb-[32px]">
             <Input
               type={"text"}
               value={state.name}
@@ -39,19 +39,15 @@ const ProductForm = (props) => {
                 dispatch({ type: "name", checkingForm: event.target.value })
               }
               dir={"rtl"}
-              className={
-                "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px] bg-transparent"
-              }
+              className={`outline-none border-b-[3px] border-b-[#6B9080] md:pr-0 pr-[25px] xl:w-[456px] lg:w-[400px] xl:h-[58px] lg:h-[54px] md:w-[300px] md:h-[50px] bg-transparent`}
               style={{
                 color: props.themeBtn === "dark" ? "#000" : "#fff",
               }}
             />
             <span
-              className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
-              style={{
-                transform: state.name ? "translateY(-40px)" : null,
-                fontSize:state.name?"16px":null,
-              }}
+              className={`pointer-events-none absolute text-[#6B9080] xl:text-[24px] lg:text-[20px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px] mr-[25px] md:mr-0 ${
+                state.name ? "active" : ""
+              }`}
             >
               اسم محصول
             </span>
@@ -65,24 +61,23 @@ const ProductForm = (props) => {
               }
               dir={"rtl"}
               className={
-                "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px] bg-transparent text-white"
+                "outline-none border-b-[3px] border-b-[#6B9080] md:pr-0 pr-[25px] xl:w-[456px] lg:w-[400px] xl:h-[58px] lg:h-[54px] md:w-[300px] md:h-[50px] bg-transparent text-white"
               }
               style={{
                 color: props.themeBtn === "dark" ? "#000" : "#fff",
               }}
             />
             <span
-              className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
-              style={{
-                transform: state.number ? "translateY(-40px)" : null,
-              }}
+              className={`pointer-events-none absolute text-[#6B9080] xl:text-[24px] lg:text-[20px] font-regular bottom-[3px] transition-all mb-[12px] mr-[25px] md:mr-0 ${
+                state.number ? "active" : ""
+              }`}
             >
               تعداد محصول
             </span>
           </div>
           <Button
             className={
-              "text-white bg-[#6B9080] w-[456px] h-[58px] rounded-[16px] text-[24px] font-regular"
+              "text-white bg-[#6B9080] xl:w-[456px] lg:w-[400px] xl:h-[58px] lg:h-[54px] md:w-[300px] md:h-[50px] w-full h-[46px] rounded-[16px] text-[20px] font-regular mb-[32px] md:mb-0"
             }
             click={submitHandler}
           >

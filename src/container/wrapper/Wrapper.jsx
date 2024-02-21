@@ -46,11 +46,11 @@ const Wrapper = (props) => {
   };
   return (
     <>
-      <div className="flex justify-between">
+      <div className="flex md:flex-row flex-col md:justify-between 2xl:mx-[156px]">
         <div className="app">
           <Shop product={products} dispath={dispath} themeForm={props.theme} />
         </div>
-        <div className="productList ml-[156px]">
+        <div className="productList">
           <ProductSearch onLoadProducts={searchProductHandler} onError={handleErrorFromChild}/>
           <ProductList
             products={Object.values(products)}

@@ -7,22 +7,22 @@ const ProductList = (props) => {
   return (
     <>
       <table className="flex flex-col">
-        <tr>
-          <th className="text-[#9CB5AA] font-regular text-[24px] pl-[157px]">
+        <tr className="flex justify-between">
+          <th className="text-[#9CB5AA] font-regular xl:text-[24px] lg:text-[20px] text-[16px] pl-[84px] xl:pl-[157px] lg:pl-[123px] md:pl-[102px]">
             نام محصول
           </th>
-          <th className="text-[#9CB5AA] font-regular text-[24px] pl-[157px]">
+          <th className="text-[#9CB5AA] font-regular xl:text-[24px] lg:text-[20px] xl:pl-[157px] lg:pl-[123px] md:pl-[102px] text-[16px] pl-[83px]">
             تعداد
           </th>
-          <th className="text-[#9CB5AA] font-regular text-[24px]">عملیات</th>
+          <th className="text-[#9CB5AA] font-regular xl:text-[24px] lg:text-[20px] text-[16px]">عملیات</th>
         </tr>
         {props.products.map((item) => (
-          <div className="wrapper h-[66px] w-[552px] bg-[#fff] border-[1px] border-solid border-[#E6E6E6] mt-[8px] relative">
+          <div className="wrapper xl:h-[66px] xl:w-[552px] lg:w-[450px] lg:h-[60px] md:w-[367px] md:h-[58px] w-full h-[56px] bg-[#fff] border-[1px] border-solid border-[#E6E6E6] mt-[8px] relative">
             <tr key={`${item.id}-${item.name}-${item.number}`} className="">
-              <td className="text-[24px] font-regular mr-[16px] mt-[16px] absolute">
+              <td className="xl:text-[24px] lg:text-[20px] md:text-[17px] text-[16px] font-regular mr-[16px] mt-[16px] absolute">
                 {item.name}
               </td>
-              <td className="ml-[240px] text-[24px] font-regular mr-[16px] mt-[16px] absolute left-0">
+              <td className="num xl:ml-[240px] lg:ml-[204px] md:ml-[163px] xl:text-[24px] lg:text-[20px] md:text-[17px] font-regular mr-[16px] mt-[16px] absolute left-[50%]">
                 {item.number}
               </td>
               <Button
@@ -48,7 +48,7 @@ const ProductList = (props) => {
       </table>
       {props.error ? (
         <div className="flex justify-center">
-          <img className="w-[290px] h-[340px] mt-[15px]" src="./src/assets/img/charecterLogoNotProduct.png" alt="" />
+          <img className="md:w-[290px] w-[250px] h-[217px] lg:w-[320px] lg:h-[295px] xl:w-[330px] xl:h-[270px] md:h-[340px] mt-[15px]" src="./src/assets/img/charecterLogoNotProduct.png" alt="" />
         </div>
       ) : null}
     </>

@@ -14,22 +14,32 @@
   src: url(../../public/font/IRANSansX-Regular.ttf);
 }
 input:focus ~ span {
-  transform: translateY(-40px);
-  font-size: 16px;
+  transform: translateY(-12px);
+  font-size: 13px;
 }
-/* input:valid ~ span { */
-  /* transform: translateY(-40px); */
-  /* font-size: 16px; */
-/* } */
-@media screen and (max-width: 640px) {
+.active {
+  transform: translateY(-12px);
+  font-size: 13px;
+}
+@media screen and (min-width: 1024px) and (max-width:1536px) {
   input:focus ~ span {
+    transform: translateY(-40px) !important;
+    font-size: 16px !important;
+  }
+  .active {
     transform: translateY(-40px);
+    font-size: 16px !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width:1024px) {
+  input:focus ~ span {
+    transform: translateY(-25px);
     font-size: 13px;
   }
-  /* input:invalid ~ span {
-    transform: translateY(-40px);
+  .active {
+    transform: translateY(-25px);
     font-size: 13px;
-  } */
+  }
 }
 .loader {
   width: 50px;
@@ -69,4 +79,7 @@ input:focus ~ span {
 }
 .wrapper {
   border-radius: 20px;
+}
+.num{
+  transform: translate(-18px, 0px);
 }
