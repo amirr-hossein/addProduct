@@ -1,4 +1,4 @@
-import React, { useReducer,useCallback } from "react";
+import React, { useReducer,useCallback,useState } from "react";
 import Shop from "../Shop/Shop";
 import useDarkMode from "../../hooks/Them";
 import ProductList from "../../components/ProductList/ProductList";
@@ -39,6 +39,11 @@ const Wrapper = (props) => {
   const searchProductHandler = useCallback((items) => {
     dispath({ type: "SET", products: items });
   }, []);
+  const [errorFromChild, setErrorFromChild] = useState(false);
+
+  const handleErrorFromChild = (error) => {
+    setErrorFromChild(error);
+  };
   return (
     <>
       <div className="flex justify-between">
@@ -46,10 +51,11 @@ const Wrapper = (props) => {
           <Shop product={products} dispath={dispath} themeForm={props.theme} />
         </div>
         <div className="productList ml-[156px]">
-          <ProductSearch onLoadProducts={searchProductHandler} />
+          <ProductSearch onLoadProducts={searchProductHandler} onError={handleErrorFromChild}/>
           <ProductList
             products={Object.values(products)}
             delete={deleteProdct}
+            error={errorFromChild}
           />
         </div>
       </div>

@@ -42,6 +42,9 @@ const ProductForm = (props) => {
               className={
                 "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px] bg-transparent"
               }
+              style={{
+                color: props.themeBtn === "dark" ? "#000" : "#fff",
+              }}
             />
             <span
               className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
@@ -61,8 +64,11 @@ const ProductForm = (props) => {
               }
               dir={"rtl"}
               className={
-                "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px] bg-transparent"
+                "outline-none border-b-[3px] border-b-[#6B9080] sm:w-[456px] w-[328px] sm:h-[58px] h-[46px] bg-transparent text-white"
               }
+              style={{
+                color: props.themeBtn === "dark" ? "#000" : "#fff",
+              }}
             />
             <span
               className="pointer-events-none absolute text-[#6B9080] sm:text-[24px] text-[16px] font-regular bottom-[3px] transition-all mb-[12px]"
