@@ -22,7 +22,7 @@ const ProductList = (props) => {
               <td className="xl:text-[24px] lg:text-[20px] md:text-[17px] text-[16px] font-regular mr-[16px] mt-[16px] absolute">
                 {item.name}
               </td>
-              <td className="num xl:ml-[240px] lg:ml-[204px] md:ml-[163px] xl:text-[24px] lg:text-[20px] md:text-[17px] font-regular mr-[16px] mt-[16px] absolute left-[50%]">
+              <td className="num xl:text-[24px] lg:text-[20px] md:text-[17px] font-regular mr-[16px] mt-[16px] absolute left-[50%]">
                 {item.number}
               </td>
               <Button
