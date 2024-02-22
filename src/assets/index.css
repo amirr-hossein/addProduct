@@ -13,14 +13,14 @@
   font-family: iranSans-regular;
   src: url(../../public/font/IRANSansX-Regular.ttf);
 }
-input:focus ~ span {
+/* input:focus ~ span {
   transform: translateY(-12px);
   font-size: 13px;
-}
-.active {
+} */
+/* .active {
   transform: translateY(-12px);
   font-size: 13px;
-}
+} */
 @media screen and (min-width: 1024px) and (max-width:1536px) {
   input:focus ~ span {
     transform: translateY(-40px) !important;
@@ -31,7 +31,7 @@ input:focus ~ span {
     font-size: 16px !important;
   }
 }
-@media screen and (min-width: 768px) and (max-width:1024px) {
+@media screen and (min-width: 768px){
   input:focus ~ span {
     transform: translateY(-25px);
     font-size: 13px;

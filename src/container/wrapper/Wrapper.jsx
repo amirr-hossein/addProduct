@@ -51,7 +51,7 @@ const Wrapper = (props) => {
           <Shop product={products} dispath={dispath} themeForm={props.theme} />
         </div>
         <div className="productList">
-          <ProductSearch onLoadProducts={searchProductHandler} onError={handleErrorFromChild}/>
+          <ProductSearch onLoadProducts={searchProductHandler} onError={handleErrorFromChild} themeForm={props.theme}/>
           <ProductList
             products={Object.values(products)}
             delete={deleteProdct}

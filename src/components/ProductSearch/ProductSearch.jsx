@@ -53,6 +53,9 @@
               type={"search"}
               className={"outline-none border-b-[3px] border-b-[#6B9080] md:pr-0 pr-[25px] xl:w-[552px] lg:w-[450px] xl:h-[58px] md:w-[365px] lg:h-[54px] md:h-[50px] bg-transparent"}
               dir={"rtl"}
+              style={{
+                color: props.themeBtn === "dark" ? "#000" : "#fff",
+              }}
             />
             <span
                 className={`pointer-events-none absolute text-[#6B9080] xl:text-[24px] lg:text-[20px] font-regular bottom-[3px] transition-all mb-[12px] mr-[25px] md:mr-0 ${
