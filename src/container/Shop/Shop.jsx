@@ -1,5 +1,4 @@
 import ProductForm from "../../components/ProductForm/ProductForm.jsx";
-// import ProductSearch from "../../components/ProductSearch/ProductSearch.jsx";
 import React from "react";
 const Shop = (props) => {
   const { dispath, product } = props;
